@@ -13,8 +13,20 @@ function register() {
  
   // Move on with Auth
   auth.createUserWithEmailAndPassword(email, password)
-  .then((userCredential) => {
-    alert(userCredential.user)
+  .then((res) => {
+    db.collection("users").add({
+      first: "Ada",
+      last: "Lovelace",
+      born: 1815
+    })
+    .then((docRef) => {
+        console.log("Document written with ID: ", docRef.id);
+    })
+    .catch((error) => {
+        console.error("Error adding document: ", error);
+    });
+  
+    
     alert('User Created!!')
   })
   .catch((error) => {
@@ -25,11 +37,6 @@ function register() {
     alert(error_message)
   })
 }
-
-
-
-
-
 
 // Validate Functions
 function validate_email(email) {
