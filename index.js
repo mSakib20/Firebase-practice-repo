@@ -1,5 +1,5 @@
 // Your web app's Firebase configuration
-const firebaseConfig = {
+var firebaseConfig = {
     apiKey: "AIzaSyACtLJPVmbrm-VTam80pmNC6ev_C9mVTiA",
     authDomain: "testing-320ed.firebaseapp.com",
     projectId: "testing-320ed",
