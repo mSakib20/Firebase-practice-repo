@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta http-equiv="X-UA-Compatible" content="ie=edge">
+<meta name="Description" content="Enter your description here"/>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.6.0/css/bootstrap.min.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+<link rel="stylesheet" href="courseform.css">
+<title>Title</title>
+</head>
+<body>
+<div class="container" id="CourseForm">
+  <div>
+    <label class="boxlength" id="header" for="text">Course Name</label>
+    <input name="test" type="text" class="form-control" id="CourseName" aria-describedby="CourseName" maxlength="3" oninput="let p = this.selectionStart; this.value = this.value.toUpperCase();this.setSelectionRange(p, p);" placeholder="Enter 3 Letter Acronym">
+    <label id="header" for="text">Term Length</label>
+    
+    <select  name="test2" id ="boxlength" class="form-control form-control-sm">
+    <option>16 Weeks</option>
+    <option>12 Weeks</option>
+    <option>8 Weeks</option>
+    </select>
+
+    <label id="header" for="text">Credit Hours</label>
+    <select id ="boxlength" class="form-control form-control-sm">
+    <option>3 Credits</option>
+    <option>4 Credits</option>
+    </select>
+
+    <div>
+      <label id="header" for="text">Class Days:</label>
+      <div class="form-check form-check-inline">
+      <input onclick="classDayCheck()" class="form-check-input" type="checkbox" id="inlineCheckbox1" value="Monday">
+      <label class="form-check-label" for="inlineCheckbox1">M</label>
+      </div>
+      <div class="form-check form-check-inline">
+      <input onclick="classDayCheck()" class="form-check-input" type="checkbox" id="inlineCheckbox2" value="Tuesday">
+      <label class="form-check-label" for="inlineCheckbox2">T</label>
+      </div>
+      <div class="form-check form-check-inline">
+      <input onclick="classDayCheck()" class="form-check-input" type="checkbox" id="inlineCheckbox3" value="Wednesday">
+      <label class="form-check-label" for="inlineCheckbox3">W</label>
+      </div>
+      <div class="form-check form-check-inline">
+      <input onclick="classDayCheck()" class="form-check-input" type="checkbox" id="inlineCheckbox4" value="Thursday">
+      <label class="form-check-label" for="inlineCheckbox4">Th</label>
+      </div>
+      <div class="form-check form-check-inline">
+      <input onclick="classDayCheck()" class="form-check-input" type="checkbox" id="inlineCheckbox5" value="Friday">
+      <label class="form-check-label" for="inlineCheckbox5">F</label>
+      </div>
+      <div class="form-check form-check-inline">
+      <input onclick="classDayCheck()" class="form-check-input" type="checkbox" id="inlineCheckbox6" value="Saturday">
+      <label class="form-check-label" for="inlineCheckbox6">S</label>
+      </div>
+      <div class="form-check form-check-inline">
+      <input onclick="classDayCheck()" class="form-check-input" type="checkbox" id="inlineCheckbox7" value="Sunday">
+      <label class="form-check-label" for="inlineCheckbox7">Su</label>
+      </div>
+      <div class="form-check form-check-inline">
+      <input onclick="classDayCheck()"class="form-check-input" type="checkbox" id="inlineCheckbox8" value="Sunday">
+      <label class="form-check-label" for="inlineCheckbox8">Remote</label>
+    </div>
+
+    <div>
+      <div>
+      <label id="header" for="text">Grading Scale</label>
+      <div class="custom-control custom-radio">
+      <input onclick="yesnoCheck()" type="radio" id="customRadio1" name="customRadio" class="custom-control-input">
+      <label class="custom-control-label" for="customRadio1"><img id="gradescale" src="GradeScale1.png"></label>
+      </div>
+      <div class="custom-control custom-radio">
+      <input onclick="yesnoCheck()" type="radio" id="customRadio2" name="customRadio" class="custom-control-input">
+      <label class="custom-control-label" for="customRadio2"><img id ="gradescale" src="GradeScale2.png"></label>
+      </div>
+      <div class="custom-control custom-radio">
+      <input onclick="yesnoCheck()" type="radio" id="customRadio3" name="customRadio" class="custom-control-input">
+      <label class="custom-control-label" for="customRadio3">Custom</label>
+      <div id="ifYes" style="display:none" >
+          <p>
+          Enter lower bound (ex: If A is 90-100, input '90') </p>
+          <p><input id="ifYes"  type="number" min="0" max="100" placeholder="A"/></p>
+          <p><input id="ifYes"  type="number" min="0" max="100" placeholder="A-"/></p>
+          <p><input id="ifYes"  type="number" min="0" max="100" placeholder="B+"/></p>
+          <p><input id="ifYes"  type="number" min="0" max="100" placeholder="B"/></p>
+          <p><input id="ifYes"  type="number" min="0" max="100" placeholder="B-"></p>
+          <p><input id="ifYes"  type="number" min="0" max="100" placeholder="C+"/></p>
+          <p><input id="ifYes"  type="number" min="0" max="100" placeholder="C"/></p>
+          <p><input id="ifYes"  type="number" min="0" max="100" placeholder="C-"/></p>
+          <p><input id="ifYes"  type="number" min="0" max="100" placeholder="D+"/></p>
+          <p><input id="ifYes"  type="number" min="0" max="100" placeholder="D"></p>
+          <p><input id="ifYes"  type="number" min="0" max="100" placeholder="D-"/></p>
+          <p><input id="ifYes"  type="number" min="0" max="100" placeholder="F"/></p>
+      </div>
+
+      <div>
+        <label id="header" for="text">Weighted Category (check all that apply)</label>   
+        <div class="col-md-12">
+            <div class="checkbox">
+            <label><input onclick="GradeCategory()" id="Exam" type="checkbox" value="">Exams (if equally weighted)</label>
+            <input class="boxlength" id="CategoryYesExam"style="display:none" type="number" min="0" max="100" placeholder="% of 100">
+            <input class="boxlength" id="CategoryYesExam2"style="display:none" type="number" min="0" placeholder="Quantity">
+            </div>
+            <div class="checkbox">
+            <label><input onclick="GradeCategory()" id="Final" type="checkbox" value="">Final</label>
+            <input class="boxlength" id="CategoryYesFinal" style="display:none" type="number" min="0" max="100" placeholder="% of 100">
+            <input class="boxlength" id="CategoryYesFinal2"style="display:none" type="number" min="0" placeholder="Quantity">
+            </div>
+            <div class="checkbox">
+            <label><input onclick="GradeCategory()" id="Midterm" type="checkbox" value="">Midterm</label>
+            <input class="boxlength" id="CategoryYesMidterm"style="display:none" type="number" min="0" max="100" placeholder="% of 100">
+            <input class="boxlength" id="CategoryYesMidterm2"style="display:none" type="number" min="0" placeholder="Quantity">
+            </div>
+            <div class="checkbox">
+            <label><input onclick="GradeCategory()" id="Quiz" type="checkbox" value="">Quiz</label>
+            <input class="boxlength" id="CategoryYesQuiz"style="display:none" type="number" min="0" max="100" placeholder="% of 100">
+            <input class="boxlength" id="CategoryYesQuiz2"style="display:none" type="number" min="0" placeholder="Quantity">
+            </div>
+            <div class="checkbox">
+            <label><input onclick="GradeCategory()"  id="HW" type="checkbox" value="">HW</label>
+            <input class="boxlength" id="CategoryYesHW"style="display:none" type="number" min="0" max="100" placeholder="% of 100">
+            <input class="boxlength" id="CategoryYesHW2"style="display:none" type="number" min="0" placeholder="Quantity">
+            </div>
+            <div class="checkbox">
+            <label><input onclick="GradeCategory()" id="Discussion" type="checkbox" value="">Discussion</label>
+            <input class="boxlength" id="CategoryYesDiscussion"style="display:none" type="number" min="0" max="100" placeholder="% of 100">
+            <input class="boxlength" id="CategoryYesDiscussion2"style="display:none" type="number" min="0" placeholder="Quantity">
+            </div>
+            <div class="checkbox">
+            <label><input onclick="GradeCategory()" id="Project" type="checkbox" value="">Project</label>
+            <input class="boxlength" id="CategoryYesProject"style="display:none" type="number" min="0" max="100" placeholder="% of 100">
+            <input class="boxlength" id="CategoryYesProject2"style="display:none" type="number" min="0" placeholder="Quantity">
+            </div>
+            <div class="checkbox">
+            <label><input onclick="GradeCategory()" id="Participation" type="checkbox" value="">Participation</label>
+            <input class="boxlength" id="CategoryYesParticipation"style="display:none" type="number" min="0" max="100" placeholder="% of 100">
+            <input class="boxlength" id="CategoryYesParticipation2"style="display:none" type="number" min="0" placeholder="Quantity">
+            </div>
+        </div>
+
+  </div>
+
+  <div>
+      <br>
+      <button onclick="addNewData()">Submit</button>
+  </div>
+</div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.1/umd/popper.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.6.0/js/bootstrap.min.js"></script>
+
+</body>
+<script src="https://www.gstatic.com/firebasejs/8.6.8/firebase-app.js"></script>
+<script src="https://www.gstatic.com/firebasejs/8.6.8/firebase-auth.js"></script>
+<script src="https://www.gstatic.com/firebasejs/8.6.8/firebase-database.js"></script>
+<script src="https://www.gstatic.com/firebasejs/8.6.8/firebase-firestore.js"></script>
+<script src="index.js"></script>
+<script src="SignUpAndLogin.js"></script>
+<script src="dataManipulation.js"></script>
+</html>
+
+<!--   <!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <meta name="Description" content="Enter your description here" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.6.0/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+  <link rel="stylesheet" href="courseform.css">
+  <title>Prototpying Form</title>
+</head>
+    <body>
+    <div class="container" id="CourseForm">
+        <form>
+        <div class="form-group">
+            <label class="boxlength" id="header" for="text">Course Name</label>
+            <input name="courseName" type="text" class="form-control" id="CourseName" aria-describedby="CourseName" maxlength="3" oninput="let p = this.selectionStart; this.value = this.value.toUpperCase();this.setSelectionRange(p, p);" placeholder="Enter 3 Letter Acronym"
+            >
+            <div>
+                <label id="header" for="text">Class Days:</label>
+                <div class="form-check form-check-inline">
+                <input onclick="classDayCheck()" class="form-check-input" type="checkbox" id="inlineCheckbox1" value="Monday">
+                <label class="form-check-label" for="inlineCheckbox1">M</label>
+                </div>
+                <div class="form-check form-check-inline">
+                <input onclick="classDayCheck()" class="form-check-input" type="checkbox" id="inlineCheckbox2" value="Tuesday">
+                <label class="form-check-label" for="inlineCheckbox2">T</label>
+                </div>
+                <div class="form-check form-check-inline">
+                <input onclick="classDayCheck()" class="form-check-input" type="checkbox" id="inlineCheckbox3" value="Wednesday">
+                <label class="form-check-label" for="inlineCheckbox3">W</label>
+                </div>
+                <div class="form-check form-check-inline">
+                <input onclick="classDayCheck()" class="form-check-input" type="checkbox" id="inlineCheckbox4" value="Thursday">
+                <label class="form-check-label" for="inlineCheckbox4">Th</label>
+                </div>
+                <div class="form-check form-check-inline">
+                <input onclick="classDayCheck()" class="form-check-input" type="checkbox" id="inlineCheckbox5" value="Friday">
+                <label class="form-check-label" for="inlineCheckbox5">F</label>
+                </div>
+                <div class="form-check form-check-inline">
+                <input onclick="classDayCheck()" class="form-check-input" type="checkbox" id="inlineCheckbox6" value="Saturday">
+                <label class="form-check-label" for="inlineCheckbox6">S</label>
+                </div>
+                <div class="form-check form-check-inline">
+                <input onclick="classDayCheck()" class="form-check-input" type="checkbox" id="inlineCheckbox7" value="Sunday">
+                <label class="form-check-label" for="inlineCheckbox7">Su</label>
+                </div>
+                <div class="form-check form-check-inline">
+                <input onclick="classDayCheck()"class="form-check-input" type="checkbox" id="inlineCheckbox8" value="Sunday">
+                <label class="form-check-label" for="inlineCheckbox8">Remote</label>
+                </div>
+            </div>
+            <label id="header" for="text">Term Length</label>
+            <select  name="termLength" id ="boxlength" class="form-control form-control-sm">
+            <option>16 Weeks</option>
+            <option>12 Weeks</option>
+            <option>8 Weeks</option>
+            </select>
+            <label id="header" for="text">Credit Hours</label>
+            <select id ="boxlength" class="form-control form-control-sm">
+            <option>3 Credits</option>
+            <option>4 Credits</option>
+            </select>
+            <label id="header" for="text">Grading Scale</label>
+            <div class="custom-control custom-radio">
+            <input onclick="yesnoCheck()" type="radio" id="customRadio1" name="customRadio" class="custom-control-input">
+            <label class="custom-control-label" for="customRadio1"><img id="gradescale" src="GradeScale1.png"></label>
+            </div>
+            <div class="custom-control custom-radio">
+            <input onclick="yesnoCheck()" type="radio" id="customRadio2" name="customRadio" class="custom-control-input">
+            <label class="custom-control-label" for="customRadio2"><img id ="gradescale" src="GradeScale2.png"></label>
+            </div>
+            <div class="custom-control custom-radio">
+            <input onclick="yesnoCheck()" type="radio" id="customRadio3" name="customRadio" class="custom-control-input">
+            <label class="custom-control-label" for="customRadio3">Custom</label>
+            <div id="ifYes" style="display:none" >
+                <p>
+                Enter lower bound (ex: If A is 90-100, input '90') </p>
+                <p><input id="ifYes"  type="number" min="0" max="100" placeholder="A"/></p>
+                <p><input id="ifYes"  type="number" min="0" max="100" placeholder="A-"/></p>
+                <p><input id="ifYes"  type="number" min="0" max="100" placeholder="B+"/></p>
+                <p><input id="ifYes"  type="number" min="0" max="100" placeholder="B"/></p>
+                <p><input id="ifYes"  type="number" min="0" max="100" placeholder="B-"></p>
+                <p><input id="ifYes"  type="number" min="0" max="100" placeholder="C+"/></p>
+                <p><input id="ifYes"  type="number" min="0" max="100" placeholder="C"/></p>
+                <p><input id="ifYes"  type="number" min="0" max="100" placeholder="C-"/></p>
+                <p><input id="ifYes"  type="number" min="0" max="100" placeholder="D+"/></p>
+                <p><input id="ifYes"  type="number" min="0" max="100" placeholder="D"></p>
+                <p><input id="ifYes"  type="number" min="0" max="100" placeholder="D-"/></p>
+                <p><input id="ifYes"  type="number" min="0" max="100" placeholder="F"/></p>
+            </div>
+            </div>
+            <div>
+            <label id="header" for="text">Weighted Category (check all that apply)</label>   
+            <div class="col-md-12">
+                <div class="checkbox">
+                <label><input onclick="GradeCategory()" id="Exam" type="checkbox" value="">Exams (if equally weighted)</label>
+                <input class="boxlength" id="CategoryYesExam"style="display:none" type="number" min="0" max="100" placeholder="% of 100">
+                <input class="boxlength" id="CategoryYesExam2"style="display:none" type="number" min="0" placeholder="Quantity">
+                </div>
+                <div class="checkbox">
+                <label><input onclick="GradeCategory()" id="Final" type="checkbox" value="">Final</label>
+                <input class="boxlength" id="CategoryYesFinal" style="display:none" type="number" min="0" max="100" placeholder="% of 100">
+                <input class="boxlength" id="CategoryYesFinal2"style="display:none" type="number" min="0" placeholder="Quantity">
+                </div>
+                <div class="checkbox">
+                <label><input onclick="GradeCategory()" id="Midterm" type="checkbox" value="">Midterm</label>
+                <input class="boxlength" id="CategoryYesMidterm"style="display:none" type="number" min="0" max="100" placeholder="% of 100">
+                <input class="boxlength" id="CategoryYesMidterm2"style="display:none" type="number" min="0" placeholder="Quantity">
+                </div>
+                <div class="checkbox">
+                <label><input onclick="GradeCategory()" id="Quiz" type="checkbox" value="">Quiz</label>
+                <input class="boxlength" id="CategoryYesQuiz"style="display:none" type="number" min="0" max="100" placeholder="% of 100">
+                <input class="boxlength" id="CategoryYesQuiz2"style="display:none" type="number" min="0" placeholder="Quantity">
+                </div>
+                <div class="checkbox">
+                <label><input onclick="GradeCategory()"  id="HW" type="checkbox" value="">HW</label>
+                <input class="boxlength" id="CategoryYesHW"style="display:none" type="number" min="0" max="100" placeholder="% of 100">
+                <input class="boxlength" id="CategoryYesHW2"style="display:none" type="number" min="0" placeholder="Quantity">
+                </div>
+                <div class="checkbox">
+                <label><input onclick="GradeCategory()" id="Discussion" type="checkbox" value="">Discussion</label>
+                <input class="boxlength" id="CategoryYesDiscussion"style="display:none" type="number" min="0" max="100" placeholder="% of 100">
+                <input class="boxlength" id="CategoryYesDiscussion2"style="display:none" type="number" min="0" placeholder="Quantity">
+                </div>
+                <div class="checkbox">
+                <label><input onclick="GradeCategory()" id="Project" type="checkbox" value="">Project</label>
+                <input class="boxlength" id="CategoryYesProject"style="display:none" type="number" min="0" max="100" placeholder="% of 100">
+                <input class="boxlength" id="CategoryYesProject2"style="display:none" type="number" min="0" placeholder="Quantity">
+                </div>
+                <div class="checkbox">
+                <label><input onclick="GradeCategory()" id="Participation" type="checkbox" value="">Participation</label>
+                <input class="boxlength" id="CategoryYesParticipation"style="display:none" type="number" min="0" max="100" placeholder="% of 100">
+                <input class="boxlength" id="CategoryYesParticipation2"style="display:none" type="number" min="0" placeholder="Quantity">
+                </div>
+            </div>
+        </div>
+    
+        <div>
+            <br>
+            <button onclick="addNewData()">Submit</button>
+        </div>
+        </form>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.6.3.js" integrity="sha256-nQLuAZGRRcILA+6dMBOvcRh5Pe310sBpanc6+QBmyVM="
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.1/umd/popper.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.6.0/js/bootstrap.min.js"></script>
+    </body>
+
+    <script src="https://www.gstatic.com/firebasejs/8.6.8/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.6.8/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.6.8/firebase-database.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.6.8/firebase-firestore.js"></script>
+    <script src="firebaseConfig.js"></script>  
+    Our script must be loaded after firebase references 
+    <script src="dataManipulation.js"></script>
+</html> -->

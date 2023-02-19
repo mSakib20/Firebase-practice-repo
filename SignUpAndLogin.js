@@ -14,18 +14,12 @@ function register() {
   // Move on with Auth
   auth.createUserWithEmailAndPassword(email, password)
   .then((res) => {
-    // refrence to the user collection and add a new document refrencing user uid and add field call "email" and pass in the email variable on input
-    db.collection('user').doc(res.user.uid).set({
+    db.collection('users').doc(res.user.uid).set({
      email:email
     })
+    alert('User Created!')
+    })
     .catch((error) => {
-        console.error("Error adding document: ", error);
-    });
-  
-    
-    alert('User Created!!')
-  })
-  .catch((error) => {
     // Firebase will use this to alert of its errors
     var error_code = error.code
     var error_message = error.message
@@ -50,22 +44,23 @@ function login () {
 
   auth.signInWithEmailAndPassword(email, password)
   .then((res) => {{
-    //once user is logged in update the login time field in the user collection
-    db.collection('user').doc(res.user.uid).update({
+    db.collection('users').doc(res.user.uid).update({
       loginTime:firebase.firestore.FieldValue.serverTimestamp(),
     })
-    // done
-    alert('User Logged In!!') 
+    .then(() => {
+      window.location = 'addcourse.html';})
+    //done
+    alert('User Logged In!')
   }})
+
+
   .catch((error) => {
     // Firebase will use this to alert of its errors
     var error_code = error.code
     var error_message = error.message
-
     alert(error_message)
   })
 }
-
 
 
 // Validate Functions
