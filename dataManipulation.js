@@ -9,7 +9,8 @@ function addNewData(){
         alert(user.uid)
         alert(courseName)
         alert(termLength)  
-        db.collection('users').doc(user.uid).update({
+
+        db.collection('users').doc(user.uid).collection('classes').doc(courseName).set({
           courseName: courseName,
           termLength: termLength
       
