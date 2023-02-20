@@ -27,3 +27,7 @@ function addNewData(){
     });
    
   } //)
+
+  //db.collection('users').doc(res.user.uid).collection('classes').update
+ // db.collection('users').doc(user.uid).update({
+// db.collection('users').doc(res.user.uid).collection('classes').doc(courseName).set({
