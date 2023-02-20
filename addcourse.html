@@ -24,44 +24,38 @@
     </select>
 
     <label id="header" for="text">Credit Hours</label>
-    <select id ="boxlength" class="form-control form-control-sm">
+    <select name="creditHours" id ="boxlength" class="form-control form-control-sm">
     <option>3 Credits</option>
     <option>4 Credits</option>
     </select>
 
     <div>
-      <label id="header" for="text">Class Days:</label>
-      <div class="form-check form-check-inline">
-      <input onclick="classDayCheck()" class="form-check-input" type="checkbox" id="inlineCheckbox1" value="Monday">
-      <label class="form-check-label" for="inlineCheckbox1">M</label>
-      </div>
-      <div class="form-check form-check-inline">
-      <input onclick="classDayCheck()" class="form-check-input" type="checkbox" id="inlineCheckbox2" value="Tuesday">
-      <label class="form-check-label" for="inlineCheckbox2">T</label>
-      </div>
-      <div class="form-check form-check-inline">
-      <input onclick="classDayCheck()" class="form-check-input" type="checkbox" id="inlineCheckbox3" value="Wednesday">
-      <label class="form-check-label" for="inlineCheckbox3">W</label>
-      </div>
-      <div class="form-check form-check-inline">
-      <input onclick="classDayCheck()" class="form-check-input" type="checkbox" id="inlineCheckbox4" value="Thursday">
-      <label class="form-check-label" for="inlineCheckbox4">Th</label>
-      </div>
-      <div class="form-check form-check-inline">
-      <input onclick="classDayCheck()" class="form-check-input" type="checkbox" id="inlineCheckbox5" value="Friday">
-      <label class="form-check-label" for="inlineCheckbox5">F</label>
-      </div>
-      <div class="form-check form-check-inline">
-      <input onclick="classDayCheck()" class="form-check-input" type="checkbox" id="inlineCheckbox6" value="Saturday">
-      <label class="form-check-label" for="inlineCheckbox6">S</label>
-      </div>
-      <div class="form-check form-check-inline">
-      <input onclick="classDayCheck()" class="form-check-input" type="checkbox" id="inlineCheckbox7" value="Sunday">
-      <label class="form-check-label" for="inlineCheckbox7">Su</label>
-      </div>
-      <div class="form-check form-check-inline">
-      <input onclick="classDayCheck()"class="form-check-input" type="checkbox" id="inlineCheckbox8" value="Sunday">
-      <label class="form-check-label" for="inlineCheckbox8">Remote</label>
+        <label id="header" for="text">Class Days:</label>
+        <div>
+          <input onclick="classDayCheck()" type="checkbox" id="day-0" value="Monday">
+          <label for="day-0">M</label>
+          
+          <input onclick="classDayCheck()" type="checkbox" id="day-1" value="Tuesday">
+          <label for="day-1">T</label>
+          
+          <input onclick="classDayCheck()" type="checkbox" id="day-2" value="Wednesday">
+          <label for="day-2">W</label>
+          
+          <input onclick="classDayCheck()" type="checkbox" id="day-3" value="Thursday">
+          <label for="day-3">Th</label>
+          
+          <input onclick="classDayCheck()" type="checkbox" id="day-4" value="Friday">
+          <label for="day-4">F</label>
+          
+          <input onclick="classDayCheck()" type="checkbox" id="day-5" value="Saturday">
+          <label for="day-5">Sa</label>
+  
+          <input onclick="classDayCheck()" type="checkbox" id="day-6" value="Sunday">
+          <label for="day-6">Su</label>
+  
+          <input onclick="classDayCheck()" type="checkbox" id="day-7" value="Remote">
+          <label for="day-7">Remote</label>
+        </div>
     </div>
 
     <div>

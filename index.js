@@ -107,35 +107,35 @@ var firebaseConfig = {
   }
   
     // Check if remote is CHECKED than rest of the days must be UNCHECKED
-    function classDayCheck() {
-      if (document.getElementById("inlineCheckbox8").checked === true){
-        document.getElementById("inlineCheckbox1").checked = false;
-        document.getElementById("inlineCheckbox2").checked = false;
-        document.getElementById("inlineCheckbox3").checked = false;
-        document.getElementById("inlineCheckbox4").checked = false;
-        document.getElementById("inlineCheckbox5").checked = false;
-        document.getElementById("inlineCheckbox6").checked = false;
-        document.getElementById("inlineCheckbox7").checked = false;
-      }
-      if (document.getElementById("inlineCheckbox1").checked === true){
-        document.getElementById("inlineCheckbox8").checked = false;
-      }
-      if (document.getElementById("inlineCheckbox2").checked === true){
-        document.getElementById("inlineCheckbox8").checked = false;
-      }
-      if (document.getElementById("inlineCheckbox3").checked === true){
-        document.getElementById("inlineCheckbox8").checked = false;
-      }
-      if (document.getElementById("inlineCheckbox4").checked === true){
-        document.getElementById("inlineCheckbox8").checked = false;
-      }
-      if (document.getElementById("inlineCheckbox5").checked === true){
-        document.getElementById("inlineCheckbox8").checked = false;
-      }
-      if (document.getElementById("inlineCheckbox6").checked === true){
-        document.getElementById("inlineCheckbox8").checked = false;
-      }
-      if (document.getElementById("inlineCheckbox7").checked === true){
-        document.getElementById("inlineCheckbox8").checked = false;
-      }
+  function classDayCheck() {
+    if (document.getElementById("day-7").checked === true){
+      document.getElementById("day-0").checked = false;
+      document.getElementById("day-1").checked = false;
+      document.getElementById("day-2").checked = false;
+      document.getElementById("day-3").checked = false;
+      document.getElementById("day-4").checked = false;
+      document.getElementById("day-5").checked = false;
+      document.getElementById("day-6").checked = false;
     }
+    if (document.getElementById("day-0").checked === true){
+      document.getElementById("day-7").checked = false;
+    }
+    if (document.getElementById("day-1").checked === true){
+      document.getElementById("day-7").checked = false;
+    }
+    if (document.getElementById("day-2").checked === true){
+      document.getElementById("day-7").checked = false;
+    }
+    if (document.getElementById("day-3").checked === true){
+      document.getElementById("day-7").checked = false;
+    }
+    if (document.getElementById("day-4").checked === true){
+      document.getElementById("day-7").checked = false;
+    }
+    if (document.getElementById("day-5").checked === true){
+      document.getElementById("day-7").checked = false;
+    }
+    if (document.getElementById("day-6").checked === true){
+      document.getElementById("day-7").checked = false;
+    }
+  }
